@@ -32,7 +32,6 @@ Validamos los post guardados hasta ahora
 
 * [Maven](https://maven.apache.org/) - Administrador de dependencias
 * [Spark](http://sparkjava.com) - Framework para desarrollo de aplicaciones web
-* [Heroku](https://heroku.com) - Plataforma de despliegue
 
 
 ## Autores
