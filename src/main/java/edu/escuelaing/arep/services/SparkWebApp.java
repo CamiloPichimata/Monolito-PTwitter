@@ -29,22 +29,18 @@ public class SparkWebApp {
 
 		 get("/getPosts", (req, res) -> {
 			 res.type("application/json");
+
 		 return new Gson().toJson(feed.getPosts());
 		 });
 
 
 		 get("/login/:user/:password", (req,res)->{
-			 System.out.println("Ingrese al login ");
-			 System.out.println("User "+ req.params(":user"));
-			 System.out.println("Password "+ req.params(":password"));
 			 boolean found = registeredUsers.IsRegistered(req.params(":user"),req.params(":password"));
 			 if(found) actualUser.set(req.params(":user"));
 		 return found;
 		 });
 
 		 post("/post",(req,res)->{
-			 System.out.println("Ingrese al post del post ");
-			 System.out.println("Body " + req.body());
 			 feed.addNewPost(new Post(req.body(), actualUser));
 			 res.status(200);
 			return "Post registrado";
