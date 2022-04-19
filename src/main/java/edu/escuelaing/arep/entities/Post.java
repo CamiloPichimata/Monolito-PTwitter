@@ -1,6 +1,7 @@
 package edu.escuelaing.arep.entities;
 
 import java.time.LocalDate;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Class that represents a post.
@@ -9,14 +10,14 @@ import java.time.LocalDate;
 public class Post {
     LocalDate datePublication;
     String content;
-    User author;
+    AtomicReference<String> author;
 
     /**
      * Creates a post.
      * @param content
      * @param author
      */
-    public Post(String content, User author) {
+    public Post(String content, AtomicReference<String> author) {
         this.content = content;
         this.author = author;
         this.datePublication = LocalDate.now();
